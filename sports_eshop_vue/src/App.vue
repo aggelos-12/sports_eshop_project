@@ -1,30 +1,39 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div id="wrapper">
+    <nav class="navbar is-dark">
+      <div class="navbar-brand">
+        <router-link :to="{ path: '/about' }" class="navbar-item"><strong>Sports Eshop</strong></router-link>
+      </div>
+
+      <div class="navbar-menu" id="mavbar-menu">
+        <div class="navbar-end">
+          <router-link to="{ path: '/summer' }">Suummer</router-link>
+          <router-link to="{ path: '/winter' }">winter</router-link>
+
+          <div class="navbar-item">
+            <div class="buttons">
+              <router-link to="{ path: '/login' }" class="button is-light">Log in</router-link>
+              <router-link to="{ path: '/cart' }" class="button is-success">
+                <span class="icon"><i class="fas fa-shopping-cart"></i></span>
+                <span>Cart</span>
+              </router-link>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </nav>
+
+    <section class="section">
+      <routet-view/>
+    </section>
+
+  </div>
+
+
 </template>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+@import '../node_modules/bulma';
 </style>
