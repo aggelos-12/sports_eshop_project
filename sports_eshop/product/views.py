@@ -23,7 +23,7 @@ class LatestProductsList(APIView):
 
 
 
-################# ETSI TO EXEI STO VIDEO #################
+################# ETSI ΤΡΕΧΕΙ ΣΩΣΤΑ ΑΛΛΑ ΔΕΝ ΕΦΑΡΜΟΖΕΙ DI #################
 
 # class LatestProductsList(APIView):
 #     def get(self, request, format=None):
