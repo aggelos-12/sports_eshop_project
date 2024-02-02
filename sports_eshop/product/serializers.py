@@ -6,10 +6,10 @@ class ProductSerializer(serializers.ModelSerializer):
         model = Product
         fields = (
             "id",
-            "productName",
+            "name",
+            "get_absolute_url",
             "color",
             "price",
-            "getAbsoluteURL",
-            "getThumbnail",
-            "getImage"
+            "get_thumbnail",
+            "get_image"
         )

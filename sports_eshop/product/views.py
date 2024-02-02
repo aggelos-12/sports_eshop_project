@@ -1,36 +1,31 @@
-import injector as injector
-from django.shortcuts import render
-
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import Product
 from .serializers import ProductSerializer
-from dependency_injector import containers, providers
+from django.http import Http404
 
-
-##### Προσπαθησα να χρησιμοποιησω το dependency_injector αλλα δεν βρηκα πολλα για το πως,
-##### κώδικα κάτω δεν λειτουργεί, δειτε πρώτα πως τρέχει με την
-##### κάτω class py manage.py runserver link αυτο που θα βγάλει στο terminal + /api/v1/latest-products
 
 class LatestProductsList(APIView):
-    def __init__(self, productSerializer: ProductSerializer):
-        self.productSerializer = productSerializer
+    product_model = Product
+    serializer_class = ProductSerializer
 
     def get(self, request, format=None):
-        products = Product.objects.all()[0:4]
-        serializer = self.productSerializer(products, many=True)
+        products = self.product_model.objects.all()[0:4]
+        serializer = self.serializer_class(products, many=True)
         return Response(serializer.data)
 
 
+class ProductDetail(APIView):
+    product_model = Product
+    serializer_class = ProductSerializer
 
-################# ETSI ΤΡΕΧΕΙ ΣΩΣΤΑ ΑΛΛΑ ΔΕΝ ΕΦΑΡΜΟΖΕΙ DI #################
+    def get_object(self, category_slug, product_slug):
+        try:
+            return self.product_model.objects.filter(category__slug=category_slug).get(slug=product_slug)
+        except self.product_model.DoesNotExist:
+            raise Http404
 
-# class LatestProductsList(APIView):
-#     def get(self, request, format=None):
-#         products = Product.objects.all()[0:4]
-#         serializer = ProductSerializer(products, many=True)
-#         return Response(serializer.data)
-
-####################################################################
-
-
+    def get(self, request, category_slug, product_slug, format=None):
+        product = self.get_object(category_slug, product_slug)
+        serializer = self.serializer_class(product)
+        return Response(serializer.data)

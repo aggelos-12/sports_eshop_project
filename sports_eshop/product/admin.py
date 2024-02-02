@@ -1,8 +1,8 @@
 from django.contrib import admin
-
-######### USERNAME: admin #########
-######### PASSWORD: admin #########
+from .models import Category, Product
 
 
+admin.site.register(Category)
+admin.site.register(Product)
 
-# Register your models here.
+
