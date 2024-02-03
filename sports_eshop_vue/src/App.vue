@@ -36,6 +36,46 @@
 
 </template>
 
+
+
+<script>
+
+
+export default {
+  data() {
+    return {
+      cart:{
+        items: []
+      }
+    }
+  },
+  beforeCreate(){
+    this.$store.commit('initializeStore')
+  },
+  mounted(){
+    this.cart = this.$store.state.cart
+
+
+  },
+  computed: {
+    cartTotalLength(){
+      let totalLength= 0
+
+      for (let i=0; i<this.cart.items.length; i++){
+        totalLength += this.cart.items[i].quantity
+
+      }
+
+      return totalLength
+    }
+  }
+}
+</script>
+
+
 <style lang="scss">
 @import '../node_modules/bulma';
+
+
+
 </style>

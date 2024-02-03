@@ -26,7 +26,7 @@
                 </table>
 
                 <p v-else>You don't have any products in your cart...</p>
-            </div> 
+            </div>
              <div class="column is-12 box">
                 <h2 class="subtitle">Summary</h2>
 

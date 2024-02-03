@@ -56,7 +56,7 @@ class Category(models.Model):
 
 class Product(models.Model):
     category = models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE)
-    productName = models.CharField(max_length=50)
+    name = models.CharField(max_length=50)
     color = models.CharField(max_length=50)
     slug = models.SlugField()
     price = models.IntegerField(default=0)

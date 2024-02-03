@@ -5,8 +5,8 @@
                 <figure class="image mb-6">
                     <img v-bind:src="product.get_image">
                 </figure>
-                
-                <h1 class="title">{{ product.name }}</h1> 
+
+                <h1 class="title">{{ product.name }}</h1>
             </div>
             <div class="column is-3">
                 <h2 class="subtitle">Information</h2>
@@ -19,9 +19,9 @@
                     <div class="control">
                         <a class="button is-dark" @click="addToCart">Add to cart</a>
                     </div>
-                </div>        
+                </div>
             </div>
-        </div> 
+        </div>
     </div>
 
 </template>
@@ -40,7 +40,7 @@ export default {
         }
     },
     mounted(){
-        
+
         this.getProduct()
     },
     methods:{
@@ -62,7 +62,7 @@ export default {
         addToCart(){
             console.log('addToCart')
             if(isNaN(this.quantity) || this.quantity < 1){
-                this.quantity = 1 
+                this.quantity = 1
             }
 
             const item = {

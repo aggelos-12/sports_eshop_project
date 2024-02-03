@@ -1,7 +1,7 @@
 <template>
 
   <div class="home">
-    
+
     <section class="hero is-medium is-dark mn-6">
       <div class="hero-body has-text-centered">
       <p class="title mb-6">
@@ -17,8 +17,8 @@
       <div class="column is-12">
         <h2 class="is-size-2 has-text-centered">Latest Products</h2>
       </div>
-      <div 
-       class="column is-3" 
+      <div
+       class="column is-3"
        v-for="product in latestProducts"
        v-bind:key="product.id"
       >
@@ -45,7 +45,7 @@ export default {
   data(){
     return{
       latestProducts: []
-    } 
+    }
   },
   components: {
   },

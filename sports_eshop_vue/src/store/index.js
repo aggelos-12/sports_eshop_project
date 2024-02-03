@@ -14,7 +14,7 @@ export default createStore({
   },
   mutations: {
     initializeStore(state){
-      if (localStorage.getItem('cart')){       
+      if (localStorage.getItem('cart')){
         state.cart = JSON.parse(localStorage.getItem('cart'))
       }else {
         localStorage.setItem('cart',JSON.stringify(state.cart))
