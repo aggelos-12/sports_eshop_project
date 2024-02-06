@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import Product from '../views/Product.vue'
 import Cart from '../views/Cart.vue'
+
+
 const routes = [
   {
     path: '/',
