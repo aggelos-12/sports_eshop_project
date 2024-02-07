@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import Product from '../views/Product.vue'
 import Cart from '../views/Cart.vue'
 import Category from '../views/Category.vue'
+import Checkout from '../views/Checkout.vue'
 
 
 const routes = [
@@ -29,11 +30,21 @@ const routes = [
     name: 'Cart',
     component: Cart
   },
+   {
+    path: '/cart/checkout',
+    name: 'Checkout',
+    component: Checkout,
+    meta: {
+        requireLogin: false
+    }
+  },
   {
     path: '/:category_slug',
     name: 'Category',
     component: Category
   }
+
+
 ]
 
 const router = createRouter({
