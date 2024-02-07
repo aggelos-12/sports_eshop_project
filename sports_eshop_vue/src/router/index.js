@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import Product from '../views/Product.vue'
 import Cart from '../views/Cart.vue'
+import Category from '../views/Category.vue'
 
 
 const routes = [
@@ -28,6 +29,11 @@ const routes = [
     name: 'Cart',
     component: Cart
   },
+  {
+    path: '/:category_slug',
+    name: 'Category',
+    component: Category
+  }
 ]
 
 const router = createRouter({
