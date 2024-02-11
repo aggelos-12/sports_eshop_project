@@ -5,7 +5,7 @@ from .serializers import ProductSerializer
 from django.http import Http404
 
 
-class LatestProductsList(APIView):
+class LatestProductList(APIView):
     product_model = Product
     serializer_class = ProductSerializer
 
