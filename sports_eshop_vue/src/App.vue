@@ -13,7 +13,8 @@
 
           <div class="navbar-item">
             <div class="buttons">
-              <router-link to="/login" class="button is-light">Log in</router-link>
+              <router-link to="/log-in" class="button is-light">Log in</router-link>
+              <router-link to="/sign-up" class="button is-light">Sign up</router-link>
               <router-link to="/cart" class="button is-success">
                 <span class="icon"><i class="fas fa-shopping-cart"></i></span>
                 <span>Cart({{ cartTotalLength }})</span>
