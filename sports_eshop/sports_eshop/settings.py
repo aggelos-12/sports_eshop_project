@@ -48,11 +48,10 @@ INSTALLED_APPS = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "http://127.0.0.1:8080",
-    "http://127.0.0.1:8000",
+    "http://localhost:8080",
 
 ]
-CORS_ALLOW_CREDENTIALS = True
+# CORS_ALLOW_CREDENTIALS = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -115,12 +114,12 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-CORS_ORIGIN_ALLOW_ALL = False
+# CORS_ORIGIN_ALLOW_ALL = False
 
-CORS_ORIGIN_WHITELIST = [
-    'http://192.168.1.6:8080',
-    'http://192.168.1.6:8000',
-]
+# CORS_ORIGIN_WHITELIST = [
+#     'http://192.168.1.6:8080',
+#     'http://192.168.1.6:8000',
+# ]
 
 
 # Internationalization
