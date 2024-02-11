@@ -4,6 +4,7 @@ import store from '../store'
 
 import HomeView from '../views/HomeView.vue'
 import Product from '../views/Product.vue'
+import Category from '../views/Category.vue'
 import Cart from '../views/Cart.vue'
 import SignUp from '../views/SignUp.vue'
 import LogIn from '../views/LogIn.vue'
