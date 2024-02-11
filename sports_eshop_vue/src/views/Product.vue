@@ -21,6 +21,7 @@
                     </div>
 
                     <div class="control">
+                        <br>
                         <a class="button is-dark" @click="addToCart">Add to cart</a>
                     </div>
                 </div>

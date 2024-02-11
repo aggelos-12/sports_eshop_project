@@ -2,7 +2,7 @@
 
   <div class="home">
 
-    <section class="hero is-medium is-dark mn-6">
+    <section class="hero is-medium is-dark mn-6 rounded">
       <div class="hero-body has-text-centered">
       <p class="title mb-6">
         What Streetwear Should Be
@@ -16,7 +16,10 @@
 
     <div class="columns is-multiline">
       <div class="column is-12">
+          <br>
           <h2 class="is-size-2 has-text-centered">Latest products</h2>
+          <br>
+
       </div>
 
       <ProductBox
@@ -66,4 +69,11 @@ export default {
     margin-left:-1.25rem;
     margin-right:-1.25rem;
   }
+
+  .rounded {
+  border-radius: 25px;
+  background: #333;
+  padding: 20px;
+  
+}
 </style>
