@@ -48,6 +48,11 @@ const routes = [
     component: Product,
   },
   {
+    path: '/:category_slug',
+    name: 'Category',
+    component: Category
+  },
+  {
     path: '/cart',
     name: 'Cart',
     component: Cart
