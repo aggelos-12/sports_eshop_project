@@ -3,11 +3,11 @@
   <div class="home">
 
     <section class="hero is-medium is-dark mn-6 rounded">
-      <div class="hero-body has-text-centered">
-      <p class="title mb-6">
+      <div class="hero-body has-text-centered" style="height: 100px;">
+      <p class="title mb-6" style="font-family: Verdana;">
         What Streetwear Should Be
       </p>
-      <p class="subtitle">
+      <p class="subtitle" style="font-family: Verdana;">
           Be One of Us
       </p>
       </div>
@@ -17,7 +17,7 @@
     <div class="columns is-multiline">
       <div class="column is-12">
           <br>
-          <h2 class="is-size-2 has-text-centered">Latest products</h2>
+          <h2 class="is-size-2 has-text-centered" style="font-family: Verdana;" >Latest products</h2>
           <br>
 
       </div>
@@ -72,6 +72,7 @@ export default {
 
   .rounded {
   border-radius: 25px;
+  height: 350px;
   background: #333;
   padding: 20px;
   

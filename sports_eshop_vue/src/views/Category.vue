@@ -2,13 +2,20 @@
     <div class="page-category">
         <div class="columns is-multiline">
             <div class="column is-12">
-                <h2 class="is-size-2 has-text-centered">
+                <div class="rounded">
+                    <h2 class="is-size-2 has-text-centered" style="font-family: Verdana ">
                     {{ category.name }}
-                    <br>
-                    <hr style="background-color: black;">
+                    
 
-                </h2>
+                    </h2>
+
+                </div>
+                
+                <br>
+                    <hr style="background-color: black; height: 3px;">    
+                    <br>
             </div>
+
 
             <ProductBox
                 v-for="product in category.products"
@@ -75,3 +82,14 @@ export default {
     }
 }
 </script>
+
+
+<style scoped>
+
+  .rounded {
+  border-radius: 25px;
+  background: #ececec;
+  padding: 20px;
+  
+}
+</style>

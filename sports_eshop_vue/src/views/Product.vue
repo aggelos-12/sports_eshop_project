@@ -7,12 +7,16 @@
                 </figure>
 
                 <h1 class="title">{{ product.name  }}</h1>
-                <p>{{ product.description }}</p>
-
+                
+                <hr style="background-color: #bebebe; height: 3px;">
+                <p style="font-size: 22px; font-weight: 600;">Description: </p>
+                <p style="font-size: 20px;">{{ product.description }}</p>
+                <hr style="background-color: #bebebe; height: 3px;">
             </div>
 
             <div class="collumn is-3">
-                <h2 class="subtitle">Information</h2>
+                <h2 class="title mb-6" style="font-family: Verdana;font-size: 20px;">Features: {{ product.information }}</h2>
+                <hr style="background-color: #bebebe; height: 3px;">
                 <p><strong>Price: </strong>${{ product.price }}</p>
 
                 <div class="filed has-addons mt-6">
