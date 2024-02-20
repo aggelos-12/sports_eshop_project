@@ -2,7 +2,10 @@
   <div id="wrapper">
     <nav class="navbar is-dark">
       <div class="navbar-brand">
+        <router-link to="/"><img src="../public/img.png" alt="logo" style="height: 60px; width: 80px;"></router-link>
+        
         <router-link to="/" class="navbar-item"><strong>Sports Eshop</strong></router-link>
+        
 
         <a class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu" @click="showMobileMenu = !showMobileMenu">
           <span aria-hidden="true"></span>
@@ -33,21 +36,25 @@
           </div>
         </div>
         <div class="navbar-end">
-          <router-link to="/summer" class="navbar-item">Summer</router-link>
-          <router-link to="/winter" class="navbar-item">Winter</router-link>
+          
           <router-link to="/shoes" class="navbar-item">Shoes</router-link>
           <router-link to="/clothing" class="navbar-item">Clothing</router-link>
           <router-link to="/accessories" class="navbar-item">Accessories</router-link>
 
           <div class="navbar-item">
             <div class="buttons">
-              <router-link to="/log-in" class="button is-light">Login</router-link>
+              <template v-if="$store.state.isAuthenticated">
+                <router-link to="/my-account" class="button is-light">My account</router-link>
+              </template>
+
+              <template v-else>
+                <router-link to="/log-in" class="button is-light">Log in</router-link>
+              </template>
+
               <router-link to="/cart" class="button is-success">
                 <span class="icon"><i class="fas fa-shopping-cart"></i></span>
-                <span>Cart({{ cartTotalLength }})</span>
-
+                <span>Cart ({{ cartTotalLength }})</span>
               </router-link>
-
             </div>
 
           </div>

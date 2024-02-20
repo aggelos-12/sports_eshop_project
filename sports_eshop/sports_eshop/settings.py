@@ -22,6 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-l!%=1t3-mpw*8__jgx3)h@afvfef=azebsw@&9v%(*b1a-*a51'
 
+STRIPE_SECRET_KEY = 'sk_test_51Ojk0eHPASo4hAGguUaAhuEENJceqoXhkS2mgpMfCnker9Us5MJwjzY1UNgAtQxsVaqTLfVmRpObVFV4sZpv8nZI00usgD98nS'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -42,7 +43,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'corsheaders',
     'djoser',
-
+    'order',
     'product',
 
 ]
@@ -113,7 +114,12 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+    # Other settings...
+}
 
 
 
