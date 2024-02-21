@@ -17,7 +17,6 @@ from .serializers import OrderSerializer, MyOrderSerializer
 # Create your views here.
 
 
-from product.views import func
 
 @api_view(['POST'])
 @authentication_classes([authentication.TokenAuthentication])
@@ -53,12 +52,8 @@ class OrdersList(APIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def get(self, request, format=None):
+        orders = Order.objects.filter(user=request.user)
 
-        func(self)
-        users = User.objects.all()
-
-        orders = Order.objects.all()
-        print(orders)
         serializer = MyOrderSerializer(orders, many=True)
         return Response(serializer.data)
 

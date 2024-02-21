@@ -43,5 +43,3 @@ class CategoryDetail(APIView):
         return Response(serializer.data)
 
 
-def func(self):
-    print("FUNKC")
