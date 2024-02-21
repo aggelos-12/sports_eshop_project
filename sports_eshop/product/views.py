@@ -41,3 +41,7 @@ class CategoryDetail(APIView):
         category = self.get_object(category_slug)
         serializer = CategorySerialiazer(category)
         return Response(serializer.data)
+
+
+def func(self):
+    print("FUNKC")

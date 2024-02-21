@@ -13,12 +13,12 @@
 
             <div class="column is-12">
                 <h2 class="subtitle">My orders</h2>
+               
                 
                 <OrderSummary
                     v-for="order in orders"
-                    :key="order.id"
-                    :order="order" />
-
+                    v-bind:key="order.id"
+                    v-bind:order="order" />
                  
             </div>
         </div>
@@ -63,6 +63,7 @@ export default {
                 .get('/api/v1/orders/')
                 .then(response => {
                     this.orders = response.data
+                    
                 })
                 .catch(error => {
                     console.log(error)

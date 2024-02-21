@@ -1,7 +1,7 @@
 <template>
-    <div class="box mb-4">
+    <div class="box mb-4" style="background-color: #ececee;">
         <h3 class="is-size-4 mb-6">Order #{{ order.id }}</h3>
-
+         
         <h4 class="is-size-5">Products</h4>
 
         <table class="table is-fullwidth">
@@ -25,7 +25,9 @@
                     <td>${{ getItemTotal(item).toFixed(2) }}</td>
                 </tr>
             </tbody>
+             
         </table>
+        
     </div>
 </template>
 
